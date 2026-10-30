@@ -16,6 +16,7 @@ TRAFFIC = None
 CONFIG = None
 VLAN_FILTERING = False
 CHANNEL = None
+DEBUG = None
 
 ethtool_rx_0_tx_0 = {'in_multicasts': (0, 20),
                      'out_multicasts': (0, 20)}
@@ -94,10 +95,15 @@ class igmp_4_port_test(unittest2.TestCase):
 
         self.host.join(self.config.HOST_LAN1, '192.168.58.2', '224.42.42.42')
         self.host.join(self.config.HOST_LAN2, '192.168.58.3', '224.42.42.42')
+        if DEBUG is not None:
+            DEBUG.snapshot('after-join')
 
     def test_04_sleep(self):
         """Sleep for a while to allow IGMP to be exchanged"""
         time.sleep(10)
+        if DEBUG is not None:
+            DEBUG.wait_memberships()
+            DEBUG.snapshot('after-membership-wait')
 
     def test_05_multicast_lan1(self):
         """Send some multicast packets out LAN1. We expect to receive them on
@@ -111,7 +117,35 @@ class igmp_4_port_test(unittest2.TestCase):
 
         self.traffic.addUDPMulticastStream(self.config.HOST_LAN1,
                                            '224.42.42.42', 500, 500)
-        self.traffic.run()
+        if DEBUG is not None:
+            DEBUG.save(dict(phase='dynamic-before-counters', counters={
+                self.config.SUT_LAN0: ethtool_stats_lan0,
+                self.config.SUT_LAN1: ethtool_stats_lan1,
+                self.config.SUT_LAN2: ethtool_stats_lan2,
+                self.config.SUT_LAN3: ethtool_stats_lan3}))
+            DEBUG.snapshot('dynamic-before')
+        try:
+            self.traffic.run()
+        finally:
+            if DEBUG is not None:
+                DEBUG.snapshot('dynamic-after', counters=True)
+        if DEBUG is not None:
+            DEBUG.save(dict(phase='dynamic-result', stats=self.traffic.stats))
+            expected = [dict(rx_pkts=0, tx_pkts=0), dict(rx_pkts=0, tx_pkts=500),
+                        dict(rx_pkts=500, tx_pkts=0), dict(rx_pkts=0, tx_pkts=0)]
+            if any(self.traffic.getStats(self.config['HOST_LAN%d' % i]) != stats
+                   for i, stats in enumerate(expected)):
+                DEBUG.static_control(filtering=self.vlan_filtering)
+        # Packet reception and isolation are required on every switch driver.
+        self.assertEqual(self.traffic.getStats(self.config.HOST_LAN0),
+                         {"rx_pkts": 0, "tx_pkts": 0})
+        self.assertEqual(self.traffic.getStats(self.config.HOST_LAN1),
+                         {"rx_pkts": 0, "tx_pkts": 500})
+        self.assertEqual(self.traffic.getStats(self.config.HOST_LAN2),
+                         {"rx_pkts": 500, "tx_pkts": 0})
+        self.assertEqual(self.traffic.getStats(self.config.HOST_LAN3),
+                         {"rx_pkts": 0, "tx_pkts": 0})
+
 
         self.sut.checkEthtoolStatsRange(self.config.SUT_LAN0,
                                         ethtool_stats_lan0,
@@ -142,6 +176,16 @@ class igmp_4_port_test(unittest2.TestCase):
         self.traffic.addUDPMulticastStream(self.config.HOST_LAN2,
                                            '224.42.42.42', 500, 500)
         self.traffic.run()
+        # Packet reception and isolation are required on every switch driver.
+        self.assertEqual(self.traffic.getStats(self.config.HOST_LAN0),
+                         {"rx_pkts": 0, "tx_pkts": 0})
+        self.assertEqual(self.traffic.getStats(self.config.HOST_LAN1),
+                         {"rx_pkts": 500, "tx_pkts": 0})
+        self.assertEqual(self.traffic.getStats(self.config.HOST_LAN2),
+                         {"rx_pkts": 0, "tx_pkts": 500})
+        self.assertEqual(self.traffic.getStats(self.config.HOST_LAN3),
+                         {"rx_pkts": 0, "tx_pkts": 0})
+
 
         self.sut.checkEthtoolStatsRange(self.config.SUT_LAN0,
                                         ethtool_stats_lan0,
@@ -172,6 +216,16 @@ class igmp_4_port_test(unittest2.TestCase):
         self.traffic.addUDPMulticastStream(self.config.HOST_LAN0,
                                            '224.42.42.42', 500, 500)
         self.traffic.run()
+        # Packet reception and isolation are required on every switch driver.
+        self.assertEqual(self.traffic.getStats(self.config.HOST_LAN0),
+                         {"rx_pkts": 0, "tx_pkts": 500})
+        self.assertEqual(self.traffic.getStats(self.config.HOST_LAN1),
+                         {"rx_pkts": 500, "tx_pkts": 0})
+        self.assertEqual(self.traffic.getStats(self.config.HOST_LAN2),
+                         {"rx_pkts": 500, "tx_pkts": 0})
+        self.assertEqual(self.traffic.getStats(self.config.HOST_LAN3),
+                         {"rx_pkts": 0, "tx_pkts": 0})
+
 
         self.sut.checkEthtoolStatsRange(self.config.SUT_LAN0,
                                         ethtool_stats_lan0,
@@ -211,6 +265,16 @@ class igmp_4_port_test(unittest2.TestCase):
         self.traffic.addUDPMulticastStream(self.config.HOST_LAN1,
                                            '224.42.42.42', 500, 500)
         self.traffic.run()
+        # Packet reception and isolation are required on every switch driver.
+        self.assertEqual(self.traffic.getStats(self.config.HOST_LAN0),
+                         {"rx_pkts": 0, "tx_pkts": 0})
+        self.assertEqual(self.traffic.getStats(self.config.HOST_LAN1),
+                         {"rx_pkts": 0, "tx_pkts": 500})
+        self.assertEqual(self.traffic.getStats(self.config.HOST_LAN2),
+                         {"rx_pkts": 500, "tx_pkts": 0})
+        self.assertEqual(self.traffic.getStats(self.config.HOST_LAN3),
+                         {"rx_pkts": 0, "tx_pkts": 0})
+
 
         self.sut.checkEthtoolStatsRange(self.config.SUT_LAN0,
                                         ethtool_stats_lan0,
