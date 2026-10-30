@@ -1,0 +1,63 @@
+# Boot sequences, UART endpoints and power control stay in boot_smoke's lab file.
+boot_smoke = "~/boot_smoke.py"
+boot_config = "~/lab.toml"
+
+[linux_uart]
+script_transport = true
+# Applied only after login; firmware keeps its boot_smoke console settings.
+write_chunk_size = 16
+write_delay_s = 0.005
+
+[boards.ea4500]
+target = "ea4500"
+mode = "arm"
+master = "eth0"
+# Only the four LAN ports are cabled; internet is excluded from tests/discovery.
+ports = ["ethernet1", "ethernet2", "ethernet3", "ethernet4"]
+host_interfaces = ["enxf8e43ba6b140", "enxf8e43ba6ce34", "enxf8e43ba948dc", "enxf8e43ba6ce10"]
+
+[boards.ea4500.linux_uart]
+# This board overran RX during bridge printk bursts with 16 bytes / 5 ms.
+write_chunk_size = 4
+write_delay_s = 0.010
+# Retain warnings/errors on the serial console; restore settings on exit.
+console_loglevel = 5
+
+[boards.sr400ac]
+target = "smartrg"
+mode = "arm"
+master = "eth2"
+ports = ["lan1", "lan2", "lan3", "lan4", "wan"]
+host_interfaces = ["enxf8e43ba6a362", "enxf8e43ba6ba55", "enxf8e43b658db7", "enxf8e43ba6cc12"]
+
+[boards.sr400ac.linux_uart]
+# RX overruns during bridge printk bursts corrupted shell commands.
+write_chunk_size = 4
+write_delay_s = 0.010
+console_loglevel = 5
+
+[boards.sr400ac.counter_map]
+in_unicast = "RxUnicastPkts"
+out_unicast = "TxUnicastPkts"
+in_multicasts = "RxMulticastPkts"
+out_multicasts = "TxMulticastPkts"
+
+[boards.lamobo-r1]
+target = "lamobo-r1"
+mode = "arm"
+master = "eth0"
+ports = ["lan1", "lan2", "lan3", "lan4", "wan"]
+host_interfaces = ["enxf8e43bab7dde", "enxf8e43ba6c90f", "enxf8e43ba6c77b", "enxf8e43ba6b4f6"]
+
+[boards.lamobo-r1.linux_uart]
+# Corrupted command markers were observed with 16-byte writes / 5 ms gaps.
+write_chunk_size = 4
+write_delay_s = 0.010
+# Retain warnings/errors and restore the original setting on exit.
+console_loglevel = 5
+
+[boards.lamobo-r1.counter_map]
+in_unicast = "RxUnicastPkts"
+out_unicast = "TxUnicastPkts"
+in_multicasts = "RxMulticastPkts"
+out_multicasts = "TxMulticastPkts"
