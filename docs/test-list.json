@@ -89,6 +89,29 @@
       "dsa_mac_learning.macs_4_ports_test.test_99_delete_bridge"
     ]
   },
+  "stp": {
+    "added": true,
+    "tests": [
+      "dsa_stp.KernelStp.test_disable_stp_restores_forwarding",
+      "dsa_stp.KernelStp.test_learning_learns_without_forwarding",
+      "dsa_stp.KernelStp.test_link_down_up_reconverges",
+      "dsa_stp.KernelStp.test_listening_does_not_learn_or_forward",
+      "dsa_stp.KernelStp.test_port_rejoin_reconverges",
+      "dsa_stp.KernelStp.test_root_bpdus_and_reserved_destination"
+    ]
+  },
+  "b53-regressions": {
+    "added": true,
+    "tests": [
+      "dsa_b53_regressions.B53Regressions.test_r6_mdb_reuses_hole_without_stale_ports",
+      "dsa_b53_regressions.B53Regressions.test_r7_cross_direction_conflicting_destination",
+      "dsa_b53_regressions.B53Regressions.test_r7_egress_conflicting_destination",
+      "dsa_b53_regressions.B53Regressions.test_r7_ingress_conflicting_destination",
+      "dsa_b53_regressions.B53Regressions.test_r8_direction_memberships_are_independent",
+      "dsa_b53_regressions.B53Regressions.test_r8_egress_shared_membership",
+      "dsa_b53_regressions.B53Regressions.test_r8_ingress_shared_membership"
+    ]
+  },
   "dsa-docs": {
     "added": true,
     "tests": [
