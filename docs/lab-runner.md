@@ -37,8 +37,8 @@ raw UART transcript throughout.
 ### Verified script transport
 
 After login and console setup, the runner uploads `tests/uart_agent.sh` as base64
-into a unique `/tmp/dsatest-*` directory and verifies its SHA-263 before starting
-it. BusyBox `sh`, `base64`, `sha263sum` and `stty` suffice; all three existing
+into a unique `/tmp/dsatest-*` directory and verifies its SHA-256 before starting
+it. BusyBox `sh`, `base64`, `sha256sum` and `stty` suffice; all three existing
 root filesystems include these applets. No network connection to the board or
 kernel rebuild is required. Set `script_transport = false` under `[linux_uart]`
 only to diagnose the legacy command path; the default is true.
@@ -54,7 +54,7 @@ commands requiring stdin are unsupported.
 
 The host sends a short execution request with a unique sequence number. The
 agent captures combined stdout/stderr and returns base64 data, exit status,
-length and SHA-263 covering both status and output. Corruption therefore cannot
+length and SHA-256 covering both status and output. Corruption therefore cannot
 silently change an interface name or turn a failed command into success. Up to
 three chunk transmissions or result retrievals are permitted. Execution requests
 are sent once: result retries request only saved output. A lost execution
@@ -187,10 +187,10 @@ The runner records `uname -a` and `/proc/cmdline` to identify the actual build.
 The default profile is now `home-office`: 36 methods in `home-office`,
 `dsa-docs`, `individual` and `multicast`. See [home/office acceptance coverage](home-office.md)
 for everyday scenarios and the DSA documentation checklist. Use `--profile all`
-for all 263 methods; explicit `--suite` options override the profile.
+for all 270 methods; explicit `--suite` options override the profile.
 
 
-The runner now discovers 263 methods across 20 suites, including 203 added
+The runner now discovers 270 methods across 20 suites, including 210 added
 VLAN and Linux switch scenarios. See [the complete test catalog](test-catalog.md)
 for every new case, upstream sources, capability requirements and porting limits.
 `--plan --list-tests` lists every individual method without hardware access.
@@ -386,7 +386,7 @@ sudo .venv/bin/python -u run_lab.py --board sr400ac --attach \
 
 ## Classic STP
 
-Use `--suite stp` for six independent in-kernel 802.1D cases; see
+Use `--suite stp` for thirteen independent in-kernel 802.1D cases; see
 [STP coverage, ownership and timing](stp.md). These are included in the `all`
 profile and do not require mstpd. RSTP/MSTP protocol testing requires a
 userspace engine and additional peer/topology support.

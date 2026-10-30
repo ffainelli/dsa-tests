@@ -11,10 +11,10 @@ Board commands use a [verified staged-script transport](docs/lab-runner.md#verif
 with checksummed uploads/results and result retrieval without re-execution.
 See [the lab runner guide](docs/lab-runner.md) for cabling, dependencies,
 coverage, capability skips, results and commands.
-The [test catalog](docs/test-catalog.md) describes all 263 methods, including
-203 added VLAN, bridge, FDB/MDB, isolation, TC and routing scenarios.
+The [test catalog](docs/test-catalog.md) describes all 270 methods, including
+210 added VLAN, bridge, FDB/MDB, isolation, TC and routing scenarios.
 
-Classic kernel STP has a dedicated [six-case suite](docs/stp.md); mstpd is not required.
+Classic kernel STP has a dedicated [thirteen-case suite](docs/stp.md); mstpd is not required.
 
 ```sh
 python3 run_lab.py --board ea4500 --plan

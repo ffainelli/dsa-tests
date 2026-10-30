@@ -1,6 +1,6 @@
 # DSA lab test catalog
 
-The runner discovers **263 methods: 60 existing + 203 added**, across 20
+The runner discovers **270 methods: 60 existing + 210 added**, across 20
 selectable suites. The default home-office profile selects 36 methods;
 `--profile all` selects the complete collection. See [home/office scenarios and
 the DSA documentation checklist](home-office.md). [Every method ID is listed here](test-list.json). Parameterized subtests exercise additional packet matrices.
@@ -26,7 +26,7 @@ and Lamobo R1; the uncabled WAN/internet port is not required.
   mz/tcpdump and host configuration run locally; switch configuration runs over
   UART. No Ostinato dependency is introduced.
 
-The six STP hardware cases have not yet been run on the boards.
+The thirteen STP hardware cases have not yet been run on the boards.
 
 **Validation so far (before the STP addition):** 55 offline checks pass, including real tcpdump decoding,
 checksums, tag parsing, capture lifecycle, failure cleanup, and hardware-free
@@ -38,7 +38,7 @@ run on the boards. Discovery is not a hardware PASS result.
 | Suite | Methods | Coverage |
 | --- | ---: | --- |
 | `b53-regressions` | 7 | [b53 MDB-bin reuse and mirror regressions](b53-regressions.md) |
-| `stp` | 6 | [Classic kernel STP](stp.md): listening/learning, root BPDUs, recovery, rejoin and disable |
+| `stp` | 13 | [Classic kernel STP](stp.md): listening/learning, root BPDUs, recovery, rejoin, disable, injected election/guards/expiry |
 | `home-office` | 8 | Flat LAN, WAN separation, staff/guest/IoT access/trunk, gateways, admission, reconnection, device moves and socket reassignment |
 | `dsa-docs` | 10 | Documented single-port/bridge/gateway recipes, native/no-tag mode selection, FDB semantics and conduit lifecycle |
 | `vlan` | 57 | 40 PR27 port/VID combinations; 4 simultaneous-upper cases; 10 IPv4/IPv6 VLAN-termination topologies; 3 CPU VLAN-admission regressions |

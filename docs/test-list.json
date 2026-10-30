@@ -93,6 +93,13 @@
     "added": true,
     "tests": [
       "dsa_stp.KernelStp.test_disable_stp_restores_forwarding",
+      "dsa_stp.KernelStp.test_injected_bpdu_guard_disables_and_recovers_port",
+      "dsa_stp.KernelStp.test_injected_competing_paths_block_higher_cost_port",
+      "dsa_stp.KernelStp.test_injected_inferior_bpdu_does_not_replace_root",
+      "dsa_stp.KernelStp.test_injected_invalid_bpdus_do_not_replace_root",
+      "dsa_stp.KernelStp.test_injected_root_expires_without_refresh",
+      "dsa_stp.KernelStp.test_injected_root_guard_prevents_root_takeover",
+      "dsa_stp.KernelStp.test_injected_superior_bpdu_on_each_user_port",
       "dsa_stp.KernelStp.test_learning_learns_without_forwarding",
       "dsa_stp.KernelStp.test_link_down_up_reconverges",
       "dsa_stp.KernelStp.test_listening_does_not_learn_or_forward",
