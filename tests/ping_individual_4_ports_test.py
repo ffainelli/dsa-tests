@@ -3,8 +3,7 @@
 same switch"""
 
 import time
-import unittest2
-import xmlrunner
+import unittest as unittest2
 
 import host
 import params
@@ -137,6 +136,7 @@ if __name__ == '__main__':
     HOST = host.HOST()
 
     if args.xml:
+        import xmlrunner
         testRunner = xmlrunner.XMLTestRunner(output='test-reports',
                                              verbosity=args.verbose)
     else:

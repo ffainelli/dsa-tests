@@ -11,7 +11,7 @@ DEBUG = False
 def dbg_print(args):
     """Print debug messages if they are enabled"""
     if DEBUG:
-        print args
+        print(args)
 
 
 class HOST(object):
@@ -46,7 +46,7 @@ class HOST(object):
         """Execute a command and return a tuple of (stdout, stderr)"""
         args = command.split(' ')
         pipe = subprocess.Popen(args, stdin=None, stdout=subprocess.PIPE,
-                                stderr=subprocess.PIPE)
+                                stderr=subprocess.PIPE, text=True)
         return pipe.communicate()
 
     def addInterface(self, interface):

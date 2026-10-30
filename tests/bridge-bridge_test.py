@@ -2,8 +2,7 @@
 """Test the operation of two bridges spanning chips on the SUT"""
 
 import time
-import unittest2
-import xmlrunner
+import unittest as unittest2
 
 import params
 import sut
@@ -11,33 +10,33 @@ import traffic
 
 
 ZERO_STATS = {
-    'rx_pkts': 0L,
-    'tx_pkts': 0L,
+    'rx_pkts': 0,
+    'tx_pkts': 0,
     }
 
 TX_50_STATS = {
-    'rx_pkts': 0L,
-    'tx_pkts': 50L,
+    'rx_pkts': 0,
+    'tx_pkts': 50,
     }
 
 TX_100_STATS = {
-    'rx_pkts': 0L,
-    'tx_pkts': 100L,
+    'rx_pkts': 0,
+    'tx_pkts': 100,
     }
 
 TX_200_STATS = {
-    'rx_pkts': 0L,
-    'tx_pkts': 200L,
+    'rx_pkts': 0,
+    'tx_pkts': 200,
     }
 
 TX_400_STATS = {
-    'rx_pkts': 0L,
-    'tx_pkts': 400L,
+    'rx_pkts': 0,
+    'tx_pkts': 400,
     }
 
 RX_100_STATS = {
-    'rx_pkts': 100L,
-    'tx_pkts': 0L,
+    'rx_pkts': 100,
+    'tx_pkts': 0,
     }
 
 CLASS_TX_RX_100 = {'tx_packets': (100, 110),
@@ -867,6 +866,7 @@ if __name__ == '__main__':
     TRAFFIC = traffic.Traffic()
 
     if ARGS.xml:
+        import xmlrunner
         TESTRUNNER = xmlrunner.XMLTestRunner(output='test-reports',
                                              verbosity=ARGS.verbose)
     else:

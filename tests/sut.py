@@ -56,8 +56,8 @@ class SUT(object):
         pattern = re.compile('exit code ([a-z0-9]+)')
         _, stdout, stderr = self.sshClient.exec_command(
             command + '; echo exit code $? ; exit\n')
-        results = stdout.read()
-        self.error = stderr.read()
+        results = stdout.read().decode()
+        self.error = stderr.read().decode()
         dbg_print(results)
         match = pattern.search(results)
         if match:
@@ -433,7 +433,7 @@ class SUT(object):
         """Get the time from a Precision Hardware Counter"""
         results = self.ssh('phc_ctl {0} get'.format(interface))
         self.checkExitCode(0)
-        pattern = re.compile('phc_ctl\[.*\]: clock time is ([0-9]*.[0-9]*) or (.*)$')
+        pattern = re.compile(r'phc_ctl\[.*\]: clock time is ([0-9]*.[0-9]*) or (.*)$')
         for line in results.splitlines():
             match = pattern.match(line)
             if match:

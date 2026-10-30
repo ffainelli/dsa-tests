@@ -2,9 +2,7 @@
 """Test lots of MAC addresses on a bridge of four ports"""
 
 import time
-import netaddr
-import unittest2
-import xmlrunner
+import unittest as unittest2
 
 import params
 import sut
@@ -28,18 +26,8 @@ class macs_4_ports_test(unittest2.TestCase):
         self.maxDiff = None
 
     def _check_interface_macs(self, macs, own_mac, bridge_mac):
-        """Verify own_mac is in macs as well as well know multicast addresses
-           and the bridge MAC address"""
-        for mac in macs:
-            if mac == own_mac:
-                continue
-            if mac == bridge_mac:
-                continue
-            if mac == '33:33:00:00:00:01':
-                continue
-            if mac == '01:00:5e:00:00:01':
-                continue
-        return True
+        """Require the learned source MAC on this port."""
+        return own_mac in macs
 
     def _check_additional_macs(self, macs, own_mac, bridge_mac,
                                base, number, step):
@@ -48,12 +36,9 @@ class macs_4_ports_test(unittest2.TestCase):
            and the expected additional MAC addresses."""
         additional = []
 
-        eui_base = netaddr.EUI(base)
-        int_base = int(eui_base)
-        for lower in range(0, number):
-            eui = netaddr.EUI(int_base + lower * step)
-            eui.dialect = netaddr.mac_unix_expanded
-            additional.append(str(eui))
+        int_base = int.from_bytes(traffic.mac_bytes(base), 'big')
+        for lower in range(number):
+            additional.append(traffic.mac_text(int_base + lower * step))
 
         for mac in macs:
             if mac == own_mac:
@@ -346,6 +331,7 @@ if __name__ == '__main__':
     TRAFFIC = traffic.Traffic()
 
     if ARGS.xml:
+        import xmlrunner
         TESTRUNNER = xmlrunner.XMLTestRunner(output='test-reports',
                                              verbosity=ARGS.verbose)
     else:

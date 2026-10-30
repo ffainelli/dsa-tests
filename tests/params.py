@@ -1,6 +1,6 @@
 """Command line parsing, which is common to all tests"""
 import argparse
-import ConfigParser
+import configparser as ConfigParser
 import sys
 
 
@@ -15,7 +15,7 @@ class dotdict(dict):
 def readConfig(filename, fourPorts=True):
     """Read the configuration file and return the config to use"""
     parser = ConfigParser.ConfigParser()
-    parser.readfp(open(filename))
+    parser.read_file(open(filename))
 
     config = {}
     config['HOST_LAN0'] = parser.get('host', 'lan0')

@@ -2,8 +2,7 @@
 """Test the operation of IGMP on a bridge on the SUT"""
 
 import time
-import unittest2
-import xmlrunner
+import unittest as unittest2
 
 import host
 import params
@@ -519,6 +518,7 @@ if __name__ == '__main__':
     TRAFFIC = traffic.Traffic()
 
     if args.xml:
+        import xmlrunner
         testRunner = xmlrunner.XMLTestRunner(output='test-reports',
                                              verbosity=args.verbose)
     else:

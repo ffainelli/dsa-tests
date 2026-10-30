@@ -2,8 +2,7 @@
 """Test the operation of two bridges on the SUT"""
 
 import time
-import unittest2
-import xmlrunner
+import unittest as unittest2
 
 import params
 import sut
@@ -11,33 +10,33 @@ import traffic
 
 
 zero_stats = {
-    'rx_pkts': 0L,
-    'tx_pkts': 0L,
+    'rx_pkts': 0,
+    'tx_pkts': 0,
     }
 
 tx_10_stats = {
-    'rx_pkts': 0L,
-    'tx_pkts': 10L,
+    'rx_pkts': 0,
+    'tx_pkts': 10,
     }
 
 tx_30_stats = {
-    'rx_pkts': 0L,
-    'tx_pkts': 30L,
+    'rx_pkts': 0,
+    'tx_pkts': 30,
     }
 
 rx_10_stats = {
-    'rx_pkts': 10L,
-    'tx_pkts': 0L,
+    'rx_pkts': 10,
+    'tx_pkts': 0,
     }
 
 rx_20_stats = {
-    'rx_pkts': 20L,
-    'tx_pkts': 0L,
+    'rx_pkts': 20,
+    'tx_pkts': 0,
     }
 
 rx_30_stats = {
-    'rx_pkts': 30L,
-    'tx_pkts': 0L,
+    'rx_pkts': 30,
+    'tx_pkts': 0,
     }
 
 ethtool_zero = {'rx_packets': (0, 4),
@@ -416,6 +415,7 @@ if __name__ == '__main__':
     TRAFFIC = traffic.Traffic()
 
     if args.xml:
+        import xmlrunner
         testRunner = xmlrunner.XMLTestRunner(output='test-reports',
                                              verbosity=args.verbose)
     else:

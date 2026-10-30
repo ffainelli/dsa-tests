@@ -2,8 +2,7 @@
 """Test the operation of IGMP on a bridge on the SUT"""
 
 import time
-import unittest2
-import xmlrunner
+import unittest as unittest2
 
 import host
 import params
@@ -228,8 +227,8 @@ class igmp_4_port_test(unittest2.TestCase):
         self.sut.checkEthtoolStatsRange(self.config.SUT_LAN3,
                                         ethtool_stats_lan3,
                                         ethtool_rx_0_tx_0, self)
-        print class_stats_br1
-        print self.sut.getClassStats('br1')
+        print(class_stats_br1)
+        print(self.sut.getClassStats('br1'))
 
     def test_10_host_leave(self):
         """Have the sut leave the multicast group, by killing the command
@@ -262,6 +261,7 @@ if __name__ == '__main__':
     TRAFFIC = traffic.Traffic()
 
     if args.xml:
+        import xmlrunner
         testRunner = xmlrunner.XMLTestRunner(output='test-reports',
                                              verbosity=args.verbose)
     else:
