@@ -1,0 +1,342 @@
+{
+  "individual": {
+    "added": false,
+    "tests": [
+      "dsa_individual.ping_individual_test.test_00_setup_sut",
+      "dsa_individual.ping_individual_test.test_01_setup_host",
+      "dsa_individual.ping_individual_test.test_02_ping",
+      "dsa_individual.ping_individual_test.test_03_arp_check",
+      "dsa_individual.ping_individual_test.test_04_pingbig",
+      "dsa_individual.ping_individual_test.test_05_ping_ipv6",
+      "dsa_individual.ping_individual_test.test_06_ping_down"
+    ]
+  },
+  "bridge-ping": {
+    "added": false,
+    "tests": [
+      "dsa_bridge_ping.ping_bridges_4_ports_test.test_00_setup_sut",
+      "dsa_bridge_ping.ping_bridges_4_ports_test.test_01_setup_host",
+      "dsa_bridge_ping.ping_bridges_4_ports_test.test_02_ping",
+      "dsa_bridge_ping.ping_bridges_4_ports_test.test_03_lan0_br0",
+      "dsa_bridge_ping.ping_bridges_4_ports_test.test_04_lan2_br2",
+      "dsa_bridge_ping.ping_bridges_4_ports_test.test_05_lan3_br3",
+      "dsa_bridge_ping.ping_bridges_4_ports_test.test_06_lan1_br1",
+      "dsa_bridge_ping.ping_bridges_4_ports_test.test_07_remove_br0",
+      "dsa_bridge_ping.ping_bridges_4_ports_test.test_08_remove_br2",
+      "dsa_bridge_ping.ping_bridges_4_ports_test.test_09_remove_br3",
+      "dsa_bridge_ping.ping_bridges_4_ports_test.test_10_remove_br1",
+      "dsa_bridge_ping.ping_bridges_4_ports_test.test_99_ping_down"
+    ]
+  },
+  "bridge": {
+    "added": false,
+    "tests": [
+      "dsa_bridge.BridgeFourPorts.test_01_create_bridge",
+      "dsa_bridge.BridgeFourPorts.test_02_unicast_ipv4_ipv6",
+      "dsa_bridge.BridgeFourPorts.test_03_broadcast",
+      "dsa_bridge.BridgeFourPorts.test_04_blocked_port",
+      "dsa_bridge.BridgeFourPorts.test_05_mac_move",
+      "dsa_bridge.BridgeFourPorts.test_99_delete_bridge"
+    ]
+  },
+  "two-bridges": {
+    "added": false,
+    "tests": [
+      "dsa_two_bridges.two_bridges_4_ports_test.test_01_create_bridge",
+      "dsa_two_bridges.two_bridges_4_ports_test.test_02_learn",
+      "dsa_two_bridges.two_bridges_4_ports_test.test_03_bridged_unicast_lan0",
+      "dsa_two_bridges.two_bridges_4_ports_test.test_04_bridged_unicast_lan1",
+      "dsa_two_bridges.two_bridges_4_ports_test.test_05_bridged_unicast_lan2",
+      "dsa_two_bridges.two_bridges_4_ports_test.test_06_bridged_unicast_lan3",
+      "dsa_two_bridges.two_bridges_4_ports_test.test_07_bridged_broadcast_lan0",
+      "dsa_two_bridges.two_bridges_4_ports_test.test_08_bridged_broadcast_lan1",
+      "dsa_two_bridges.two_bridges_4_ports_test.test_09_bridged_broadcast_lan2",
+      "dsa_two_bridges.two_bridges_4_ports_test.test_10_bridged_broadcast_lan3",
+      "dsa_two_bridges.two_bridges_4_ports_test.test_11_bridged_unicast_lan0_ipv6",
+      "dsa_two_bridges.two_bridges_4_ports_test.test_12_bridged_unicast_lan1_ipv6",
+      "dsa_two_bridges.two_bridges_4_ports_test.test_13_bridged_unicast_lan2_ipv6",
+      "dsa_two_bridges.two_bridges_4_ports_test.test_14_bridged_unicast_lan3_ipv6",
+      "dsa_two_bridges.two_bridges_4_ports_test.test_99_delete_bridge"
+    ]
+  },
+  "multicast": {
+    "added": false,
+    "tests": [
+      "dsa_multicast.igmp_4_port_test.test_01_setup_sut",
+      "dsa_multicast.igmp_4_port_test.test_02_setup_host",
+      "dsa_multicast.igmp_4_port_test.test_03_join",
+      "dsa_multicast.igmp_4_port_test.test_04_sleep",
+      "dsa_multicast.igmp_4_port_test.test_05_multicast_lan1",
+      "dsa_multicast.igmp_4_port_test.test_06_multicast_lan2",
+      "dsa_multicast.igmp_4_port_test.test_07_multicast_lan0",
+      "dsa_multicast.igmp_4_port_test.test_08_host_join",
+      "dsa_multicast.igmp_4_port_test.test_09_multicast_lan1",
+      "dsa_multicast.igmp_4_port_test.test_10_host_leave",
+      "dsa_multicast.igmp_4_port_test.test_99_delete_bridge"
+    ]
+  },
+  "mac-learning": {
+    "added": false,
+    "tests": [
+      "dsa_mac_learning.macs_4_ports_test.test_01_create_bridge",
+      "dsa_mac_learning.macs_4_ports_test.test_02_learn",
+      "dsa_mac_learning.macs_4_ports_test.test_03_interface_macs",
+      "dsa_mac_learning.macs_4_ports_test.test_04_384_macs",
+      "dsa_mac_learning.macs_4_ports_test.test_05_1020_macs",
+      "dsa_mac_learning.macs_4_ports_test.test_06_3072_macs",
+      "dsa_mac_learning.macs_4_ports_test.test_07_atu_full_violation",
+      "dsa_mac_learning.macs_4_ports_test.test_08_atu_member_violation",
+      "dsa_mac_learning.macs_4_ports_test.test_99_delete_bridge"
+    ]
+  },
+  "dsa-docs": {
+    "added": true,
+    "tests": [
+      "dsa_dsa_docs.DsaDocumentation.test_bridge_showcase",
+      "dsa_dsa_docs.DsaDocumentation.test_conduit_down_lowers_users",
+      "dsa_dsa_docs.DsaDocumentation.test_gateway_showcase",
+      "dsa_dsa_docs.DsaDocumentation.test_implicit_local_fdb_is_device_local",
+      "dsa_dsa_docs.DsaDocumentation.test_master_local_fdb",
+      "dsa_dsa_docs.DsaDocumentation.test_master_static_fdb",
+      "dsa_dsa_docs.DsaDocumentation.test_read_tagging_protocol",
+      "dsa_dsa_docs.DsaDocumentation.test_self_static_is_not_a_hardware_forwarding_entry",
+      "dsa_dsa_docs.DsaDocumentation.test_single_port_showcase",
+      "dsa_dsa_docs.DsaDocumentation.test_user_up_automatically_raises_conduit"
+    ]
+  },
+  "home-office": {
+    "added": true,
+    "tests": [
+      "dsa_home_office.HomeOffice.test_each_vlan_reaches_its_router_interface",
+      "dsa_home_office.HomeOffice.test_flat_lan_devices_communicate",
+      "dsa_home_office.HomeOffice.test_lan_does_not_bridge_to_wan",
+      "dsa_home_office.HomeOffice.test_move_a_device_to_another_socket",
+      "dsa_home_office.HomeOffice.test_reassign_a_guest_socket_to_staff",
+      "dsa_home_office.HomeOffice.test_staff_guest_iot_access_and_trunk",
+      "dsa_home_office.HomeOffice.test_unplug_and_reconnect_a_client",
+      "dsa_home_office.HomeOffice.test_wrong_vlan_and_untagged_uplink_are_rejected"
+    ]
+  },
+  "vlan": {
+    "added": true,
+    "tests": [
+      "dsa_vlan.VlanTermination.test_bridge_aware_ipv4",
+      "dsa_vlan.VlanTermination.test_bridge_aware_ipv6",
+      "dsa_vlan.VlanTermination.test_bridge_unaware_ipv4",
+      "dsa_vlan.VlanTermination.test_bridge_unaware_ipv6",
+      "dsa_vlan.VlanTermination.test_port_aware_ipv4",
+      "dsa_vlan.VlanTermination.test_port_aware_ipv6",
+      "dsa_vlan.VlanTermination.test_port_unaware_ipv4",
+      "dsa_vlan.VlanTermination.test_port_unaware_ipv6",
+      "dsa_vlan.VlanTermination.test_pr27_port0_vid0",
+      "dsa_vlan.VlanTermination.test_pr27_port0_vid1",
+      "dsa_vlan.VlanTermination.test_pr27_port0_vid2",
+      "dsa_vlan.VlanTermination.test_pr27_port0_vid3",
+      "dsa_vlan.VlanTermination.test_pr27_port0_vid4",
+      "dsa_vlan.VlanTermination.test_pr27_port0_vid5",
+      "dsa_vlan.VlanTermination.test_pr27_port0_vid6",
+      "dsa_vlan.VlanTermination.test_pr27_port0_vid7",
+      "dsa_vlan.VlanTermination.test_pr27_port0_vid8",
+      "dsa_vlan.VlanTermination.test_pr27_port0_vid9",
+      "dsa_vlan.VlanTermination.test_pr27_port1_vid0",
+      "dsa_vlan.VlanTermination.test_pr27_port1_vid1",
+      "dsa_vlan.VlanTermination.test_pr27_port1_vid2",
+      "dsa_vlan.VlanTermination.test_pr27_port1_vid3",
+      "dsa_vlan.VlanTermination.test_pr27_port1_vid4",
+      "dsa_vlan.VlanTermination.test_pr27_port1_vid5",
+      "dsa_vlan.VlanTermination.test_pr27_port1_vid6",
+      "dsa_vlan.VlanTermination.test_pr27_port1_vid7",
+      "dsa_vlan.VlanTermination.test_pr27_port1_vid8",
+      "dsa_vlan.VlanTermination.test_pr27_port1_vid9",
+      "dsa_vlan.VlanTermination.test_pr27_port2_vid0",
+      "dsa_vlan.VlanTermination.test_pr27_port2_vid1",
+      "dsa_vlan.VlanTermination.test_pr27_port2_vid2",
+      "dsa_vlan.VlanTermination.test_pr27_port2_vid3",
+      "dsa_vlan.VlanTermination.test_pr27_port2_vid4",
+      "dsa_vlan.VlanTermination.test_pr27_port2_vid5",
+      "dsa_vlan.VlanTermination.test_pr27_port2_vid6",
+      "dsa_vlan.VlanTermination.test_pr27_port2_vid7",
+      "dsa_vlan.VlanTermination.test_pr27_port2_vid8",
+      "dsa_vlan.VlanTermination.test_pr27_port2_vid9",
+      "dsa_vlan.VlanTermination.test_pr27_port3_vid0",
+      "dsa_vlan.VlanTermination.test_pr27_port3_vid1",
+      "dsa_vlan.VlanTermination.test_pr27_port3_vid2",
+      "dsa_vlan.VlanTermination.test_pr27_port3_vid3",
+      "dsa_vlan.VlanTermination.test_pr27_port3_vid4",
+      "dsa_vlan.VlanTermination.test_pr27_port3_vid5",
+      "dsa_vlan.VlanTermination.test_pr27_port3_vid6",
+      "dsa_vlan.VlanTermination.test_pr27_port3_vid7",
+      "dsa_vlan.VlanTermination.test_pr27_port3_vid8",
+      "dsa_vlan.VlanTermination.test_pr27_port3_vid9",
+      "dsa_vlan.VlanTermination.test_pr27_simultaneous_uppers_port0",
+      "dsa_vlan.VlanTermination.test_pr27_simultaneous_uppers_port1",
+      "dsa_vlan.VlanTermination.test_pr27_simultaneous_uppers_port2",
+      "dsa_vlan.VlanTermination.test_pr27_simultaneous_uppers_port3",
+      "dsa_vlan.VlanTermination.test_standalone_ipv4",
+      "dsa_vlan.VlanTermination.test_standalone_ipv6",
+      "dsa_vlan.VlanLocalAdmission.test_cpu_bridge_self_member_admitted",
+      "dsa_vlan.VlanLocalAdmission.test_cpu_bridge_self_membership",
+      "dsa_vlan.VlanLocalAdmission.test_wrong_vid_not_terminated"
+    ]
+  },
+  "vlan-admission": {
+    "added": true,
+    "tests": [
+      "dsa_vlan_admission.VlanAdmission.test_access_to_trunk",
+      "dsa_vlan_admission.VlanAdmission.test_delete_member",
+      "dsa_vlan_admission.VlanAdmission.test_delete_unrelated_vlan_preserves_pvid",
+      "dsa_vlan_admission.VlanAdmission.test_filtering_transition",
+      "dsa_vlan_admission.VlanAdmission.test_high_vid",
+      "dsa_vlan_admission.VlanAdmission.test_no_pvid_survives_bridge_rejoin",
+      "dsa_vlan_admission.VlanAdmission.test_no_pvid_survives_link_cycle",
+      "dsa_vlan_admission.VlanAdmission.test_other_tpid_uses_pvid",
+      "dsa_vlan_admission.VlanAdmission.test_priority_tag_no_pvid",
+      "dsa_vlan_admission.VlanAdmission.test_priority_tag_uses_pvid",
+      "dsa_vlan_admission.VlanAdmission.test_pvid_change",
+      "dsa_vlan_admission.VlanAdmission.test_tagged_member",
+      "dsa_vlan_admission.VlanAdmission.test_tagged_nonmember",
+      "dsa_vlan_admission.VlanAdmission.test_trunk_to_access",
+      "dsa_vlan_admission.VlanAdmission.test_unaware_preserves_vlan",
+      "dsa_vlan_admission.VlanAdmission.test_unknown_vid",
+      "dsa_vlan_admission.VlanAdmission.test_untagged_no_pvid"
+    ]
+  },
+  "ping-sizes": {
+    "added": true,
+    "tests": [
+      "dsa_ping_sizes.PingSizes.test_pr17_bridge_port0_size1",
+      "dsa_ping_sizes.PingSizes.test_pr17_bridge_port0_size1472",
+      "dsa_ping_sizes.PingSizes.test_pr17_bridge_port0_size32",
+      "dsa_ping_sizes.PingSizes.test_pr17_bridge_port1_size1",
+      "dsa_ping_sizes.PingSizes.test_pr17_bridge_port1_size1472",
+      "dsa_ping_sizes.PingSizes.test_pr17_bridge_port1_size32",
+      "dsa_ping_sizes.PingSizes.test_pr17_bridge_port2_size1",
+      "dsa_ping_sizes.PingSizes.test_pr17_bridge_port2_size1472",
+      "dsa_ping_sizes.PingSizes.test_pr17_bridge_port2_size32",
+      "dsa_ping_sizes.PingSizes.test_pr17_bridge_port3_size1",
+      "dsa_ping_sizes.PingSizes.test_pr17_bridge_port3_size1472",
+      "dsa_ping_sizes.PingSizes.test_pr17_bridge_port3_size32",
+      "dsa_ping_sizes.PingSizes.test_pr17_standalone_port0_size1",
+      "dsa_ping_sizes.PingSizes.test_pr17_standalone_port0_size1472",
+      "dsa_ping_sizes.PingSizes.test_pr17_standalone_port0_size32",
+      "dsa_ping_sizes.PingSizes.test_pr17_standalone_port1_size1",
+      "dsa_ping_sizes.PingSizes.test_pr17_standalone_port1_size1472",
+      "dsa_ping_sizes.PingSizes.test_pr17_standalone_port1_size32",
+      "dsa_ping_sizes.PingSizes.test_pr17_standalone_port2_size1",
+      "dsa_ping_sizes.PingSizes.test_pr17_standalone_port2_size1472",
+      "dsa_ping_sizes.PingSizes.test_pr17_standalone_port2_size32",
+      "dsa_ping_sizes.PingSizes.test_pr17_standalone_port3_size1",
+      "dsa_ping_sizes.PingSizes.test_pr17_standalone_port3_size1472",
+      "dsa_ping_sizes.PingSizes.test_pr17_standalone_port3_size32"
+    ]
+  },
+  "linux-bridge": {
+    "added": true,
+    "tests": [
+      "dsa_linux_bridge.LinuxBridge.test_blocked_port",
+      "dsa_linux_bridge.LinuxBridge.test_bridge_leave_rejoin",
+      "dsa_linux_bridge.LinuxBridge.test_broadcast_flood_toggle",
+      "dsa_linux_bridge.LinuxBridge.test_hairpin",
+      "dsa_linux_bridge.LinuxBridge.test_learning_disabled",
+      "dsa_linux_bridge.LinuxBridge.test_learning_enabled",
+      "dsa_linux_bridge.LinuxBridge.test_link_down_up",
+      "dsa_linux_bridge.LinuxBridge.test_multicast_flood_toggle",
+      "dsa_linux_bridge.LinuxBridge.test_port_isolation",
+      "dsa_linux_bridge.LinuxBridge.test_reserved_link_local_not_forwarded",
+      "dsa_linux_bridge.LinuxBridge.test_unaware_pvid_change",
+      "dsa_linux_bridge.LinuxBridge.test_unknown_unicast_flood_toggle",
+      "dsa_linux_bridge.LinuxBridgeControl.test_backup_port",
+      "dsa_linux_bridge.LinuxBridgeControl.test_fdb_flush_dynamic_preserves_static",
+      "dsa_linux_bridge.LinuxBridgeControl.test_vlan_range_dump",
+      "dsa_linux_bridge.LinuxStpMode.test_atomic_mode_and_state",
+      "dsa_linux_bridge.LinuxStpMode.test_default_auto",
+      "dsa_linux_bridge.LinuxStpMode.test_idempotent_mode_while_active",
+      "dsa_linux_bridge.LinuxStpMode.test_kernel_mode",
+      "dsa_linux_bridge.LinuxStpMode.test_mode_persistence",
+      "dsa_linux_bridge.LinuxStpMode.test_reject_change_while_active",
+      "dsa_linux_bridge.LinuxStpMode.test_set_modes",
+      "dsa_linux_bridge.LinuxStpMode.test_user_mode",
+      "dsa_linux_bridge.LinuxVlanBinding.test_binding_off",
+      "dsa_linux_bridge.LinuxVlanBinding.test_binding_on",
+      "dsa_linux_bridge.LinuxVlanBinding.test_toggle_off_when_lower_down",
+      "dsa_linux_bridge.LinuxVlanBinding.test_toggle_off_when_up",
+      "dsa_linux_bridge.LinuxVlanBinding.test_toggle_off_when_upper_down",
+      "dsa_linux_bridge.LinuxVlanBinding.test_toggle_on_when_lower_down",
+      "dsa_linux_bridge.LinuxVlanBinding.test_toggle_on_when_up",
+      "dsa_linux_bridge.LinuxVlanBinding.test_toggle_on_when_upper_down",
+      "dsa_linux_bridge.LinuxMtu.test_invalid_bounds",
+      "dsa_linux_bridge.LinuxMtu.test_jumbo_port0",
+      "dsa_linux_bridge.LinuxMtu.test_jumbo_port1",
+      "dsa_linux_bridge.LinuxMtu.test_jumbo_port2",
+      "dsa_linux_bridge.LinuxMtu.test_jumbo_port3"
+    ]
+  },
+  "linux-fdb": {
+    "added": true,
+    "tests": [
+      "dsa_linux_fdb.LinuxFdb.test_dsa_fdb_concurrent_add_delete_dump",
+      "dsa_linux_fdb.LinuxFdb.test_dynamic_ageing",
+      "dsa_linux_fdb.LinuxFdb.test_dynamic_roaming",
+      "dsa_linux_fdb.LinuxFdb.test_extern_learn_does_not_age",
+      "dsa_linux_fdb.LinuxFdb.test_extern_learn_roaming",
+      "dsa_linux_fdb.LinuxFdb.test_local_mac_not_forwarded",
+      "dsa_linux_fdb.LinuxFdb.test_same_mac_different_vlans",
+      "dsa_linux_fdb.LinuxFdb.test_static_forwarding_and_delete",
+      "dsa_linux_fdb.LinuxFdb.test_sticky_does_not_roam"
+    ]
+  },
+  "linux-mdb": {
+    "added": true,
+    "tests": [
+      "dsa_linux_mdb.LinuxMdb.test_igmp_mdb_add_delete",
+      "dsa_linux_mdb.LinuxMdb.test_igmp_vlan_mdb",
+      "dsa_linux_mdb.LinuxMdb.test_mdb_port_down_ipv4",
+      "dsa_linux_mdb.LinuxMdb.test_mdb_port_down_ipv6",
+      "dsa_linux_mdb.LinuxMdb.test_mdb_vlan_scope",
+      "dsa_linux_mdb.LinuxMdb.test_mld_mdb_add_delete",
+      "dsa_linux_mdb.LinuxMdb.test_mld_vlan_mdb"
+    ]
+  },
+  "linux-locked-port": {
+    "added": true,
+    "tests": [
+      "dsa_linux_locked_port.LinuxLockedPort.test_locked_ipv4",
+      "dsa_linux_locked_port.LinuxLockedPort.test_locked_ipv6",
+      "dsa_linux_locked_port.LinuxLockedPort.test_locked_vlan",
+      "dsa_linux_locked_port.LinuxLockedPort.test_mab_authorization"
+    ]
+  },
+  "linux-no-forwarding": {
+    "added": true,
+    "tests": [
+      "dsa_linux_no_forwarding.LinuxNoForwarding.test_different_pvids",
+      "dsa_linux_no_forwarding.LinuxNoForwarding.test_standalone",
+      "dsa_linux_no_forwarding.LinuxNoForwarding.test_two_bridges"
+    ]
+  },
+  "linux-tc": {
+    "added": true,
+    "tests": [
+      "dsa_linux_tc.LinuxTc.test_flower_ipv4_drop",
+      "dsa_linux_tc.LinuxTc.test_flower_ipv6_drop",
+      "dsa_linux_tc.LinuxTc.test_flower_mac_drop",
+      "dsa_linux_tc.LinuxTc.test_flower_udp_drop",
+      "dsa_linux_tc.LinuxTc.test_flower_vlan_drop",
+      "dsa_linux_tc.LinuxTc.test_mirror",
+      "dsa_linux_tc.LinuxTc.test_redirect"
+    ]
+  },
+  "linux-routing": {
+    "added": true,
+    "tests": [
+      "dsa_linux_routing.LinuxRouting.test_bridge_aware_ipv4",
+      "dsa_linux_routing.LinuxRouting.test_bridge_aware_ipv6",
+      "dsa_linux_routing.LinuxRouting.test_bridge_unaware_ipv4",
+      "dsa_linux_routing.LinuxRouting.test_bridge_unaware_ipv6",
+      "dsa_linux_routing.LinuxRouting.test_standalone_ipv4",
+      "dsa_linux_routing.LinuxRouting.test_standalone_ipv6",
+      "dsa_linux_routing.LinuxRouting.test_vlan_ipv4",
+      "dsa_linux_routing.LinuxRouting.test_vlan_ipv6"
+    ]
+  }
+}
