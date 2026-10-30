@@ -1,0 +1,57 @@
+{
+  "source": "/home/florian/dev/linux/Documentation/networking/dsa",
+  "scope": "Home/office examples; specialist prerequisites documented per user clarification. Implemented does not mean hardware-validated.",
+  "documents": {
+    "configuration.rst": {
+      "suites": [
+        "dsa-docs"
+      ],
+      "scope": "Single-port, bridge, gateway; native or protocol-none recipe; current FDB and admin-state semantics. Specialist CPU affinity/bonding excluded by agreed scope.",
+      "sha256": "b3d1a4c825159bda606ec85fd7e123282e5cbb1b154187f248b072b7e619fca4"
+    },
+    "b53.rst": {
+      "suites": [
+        "dsa-docs"
+      ],
+      "scope": "Native recipes shared with all taggers; protocol-none conduit VLAN recipes remove default VID membership on other PVIDs. No model-name condition.",
+      "sha256": "50f4f1b12200c42bbc21c6a7ff73682f89f2d6000cdabf090ee0e974c61404e2"
+    },
+    "dsa.rst": {
+      "suites": [
+        "dsa-docs"
+      ],
+      "scope": "Read active tag protocol. Runtime tag changes/cascades are specialist configurations with prerequisites documented.",
+      "sha256": "f4d18c9965cf1de433ae6c200ca3108d39dc61502bd60c2ec977373da0f32ac0"
+    },
+    "lan9303.rst": {
+      "suites": [
+        "individual",
+        "home-office",
+        "linux-bridge"
+      ],
+      "scope": "Standalone isolation and bridge forwarding/leave-rejoin behavior. Exact current harness requires four cables; no claim of validation on two-port hardware.",
+      "sha256": "cfc77fd777a0ba3626212d36561e213b3e4be8e22ace051cc2419f868cc4d2e4"
+    },
+    "bcm_sf2.rst": {
+      "suites": [
+        "dsa-docs"
+      ],
+      "scope": "Ordinary tagged DSA recipes; MoCA/WoL/platform specialist requirements documented.",
+      "sha256": "9c5f853bf95218725698ab995635a3c045974034b054b57ac5d1140022165135"
+    },
+    "sja1105.rst": {
+      "suites": [
+        "dsa-docs",
+        "vlan",
+        "vlan-admission"
+      ],
+      "scope": "Common standalone/bridge/VLAN semantics; timed gates, TSN and composed trap/redirect examples excluded by agreed scope.",
+      "sha256": "b3026472ee0bda3f335e7e4a9d137783a8eb88c4eafbab50faf29e03a3eb7309"
+    },
+    "index.rst": {
+      "suites": [],
+      "scope": "Documentation index; no configuration example.",
+      "sha256": "e2584b4a1b2e52c63ceffe230d1a8aaadbd4894306a4e2c3067a77eda0528206"
+    }
+  }
+}

@@ -1,0 +1,965 @@
+{
+  "linux_source": "/home/florian/dev/linux",
+  "revision": "3d79bab106de0576cdcc57af021c9528262e7f94",
+  "source_dirty": false,
+  "dsatest_prs": {
+    "27": "19c594065f6d",
+    "17": "125745c69191"
+  },
+  "scope": "Selected switch scenarios adapted to split-host/UART. This is not a complete port of all upstream files or variants.",
+  "sources": [
+    {
+      "source": "net/forwarding/bridge_activity_notify.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/bridge_fdb_learning_limit.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/bridge_fdb_local_vlan_0.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/bridge_igmp.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/bridge_locked_port.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-locked-port"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "net/forwarding/bridge_mdb.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-mdb"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "net/forwarding/bridge_mdb_host.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/bridge_mdb_max.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/bridge_mdb_port_down.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-mdb"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "net/forwarding/bridge_mld.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-mdb"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "net/forwarding/bridge_port_isolation.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-bridge"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "net/forwarding/bridge_sticky_fdb.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-fdb"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "net/forwarding/bridge_vlan_aware.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "vlan-admission",
+        "linux-bridge",
+        "linux-fdb"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "net/forwarding/bridge_vlan_mcast.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-mdb"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "net/forwarding/bridge_vlan_unaware.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "vlan-admission",
+        "linux-bridge",
+        "linux-fdb"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "net/forwarding/custom_multipath_hash.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/devlink_lib.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Upstream harness or library, not an independently adapted test."
+    },
+    {
+      "source": "net/forwarding/dual_vxlan_bridge.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/fib_offload_lib.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Upstream harness or library, not an independently adapted test."
+    },
+    {
+      "source": "net/forwarding/gre_custom_multipath_hash.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/gre_inner_v4_multipath.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/gre_inner_v6_multipath.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/gre_multipath.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/gre_multipath_nh.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/gre_multipath_nh_res.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/ip6_forward_instats_vrf.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/ip6gre_custom_multipath_hash.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/ip6gre_flat.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/ip6gre_flat_key.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/ip6gre_flat_keys.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/ip6gre_hier.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/ip6gre_hier_key.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/ip6gre_hier_keys.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/ip6gre_inner_v4_multipath.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/ip6gre_inner_v6_multipath.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/ip6gre_lib.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Upstream harness or library, not an independently adapted test."
+    },
+    {
+      "source": "net/forwarding/ipip_flat_gre.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/ipip_flat_gre_key.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/ipip_flat_gre_keys.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/ipip_hier_gre.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/ipip_hier_gre_key.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/ipip_hier_gre_keys.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/ipip_lib.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Upstream harness or library, not an independently adapted test."
+    },
+    {
+      "source": "net/forwarding/lib.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-bridge",
+        "linux-fdb"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "net/forwarding/lib_sh_test.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/local_termination.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "vlan"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "net/forwarding/min_max_mtu.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-bridge"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "net/forwarding/mirror_gre.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/mirror_gre_bound.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/mirror_gre_bridge_1d.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/mirror_gre_bridge_1d_vlan.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/mirror_gre_bridge_1q.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/mirror_gre_bridge_1q_lag.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/mirror_gre_changes.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/mirror_gre_flower.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/mirror_gre_lag_lacp.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/mirror_gre_lib.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Upstream harness or library, not an independently adapted test."
+    },
+    {
+      "source": "net/forwarding/mirror_gre_neigh.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/mirror_gre_nh.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/mirror_gre_topo_lib.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Upstream harness or library, not an independently adapted test."
+    },
+    {
+      "source": "net/forwarding/mirror_gre_vlan.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/mirror_gre_vlan_bridge_1q.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/mirror_lib.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-tc"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "net/forwarding/mirror_topo_lib.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-tc"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "net/forwarding/mirror_vlan.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-tc"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "net/forwarding/no_forwarding.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-no-forwarding"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "net/forwarding/pedit_dsfield.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/pedit_ip.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/pedit_l4port.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/q_in_vni.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/q_in_vni_ipv6.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/router.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-routing"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "net/forwarding/router_bridge.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-routing"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "net/forwarding/router_bridge_1d.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/router_bridge_1d_lag.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/router_bridge_lag.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/router_bridge_pvid_vlan_upper.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/router_bridge_vlan.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-routing"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "net/forwarding/router_bridge_vlan_upper.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-routing"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "net/forwarding/router_bridge_vlan_upper_pvid.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/router_broadcast.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/router_mpath_nh.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/router_mpath_nh_lib.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Upstream harness or library, not an independently adapted test."
+    },
+    {
+      "source": "net/forwarding/router_mpath_nh_res.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/router_mpath_seed.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/router_multicast.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/router_multipath.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/router_nh.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/router_vid_1.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/sch_ets.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/sch_ets_core.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/sch_ets_tests.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/sch_red.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/sch_tbf_core.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/sch_tbf_ets.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/sch_tbf_etsprio.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/sch_tbf_prio.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/sch_tbf_root.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/skbedit_priority.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/tc_actions.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-tc"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "net/forwarding/tc_chains.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/tc_common.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/tc_flower.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-tc"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "net/forwarding/tc_flower_cfm.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/tc_flower_l2_miss.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/tc_flower_port_range.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/tc_flower_router.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/tc_mpls_l2vpn.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/tc_police.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/tc_shblocks.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/tc_taprio.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/tc_tunnel_key.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/tc_vlan_modify.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/tsn_lib.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Upstream harness or library, not an independently adapted test."
+    },
+    {
+      "source": "net/forwarding/vxlan_asymmetric.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/vxlan_asymmetric_ipv6.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/vxlan_bridge_1d.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/vxlan_bridge_1d_ipv6.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/vxlan_bridge_1d_port_8472.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/vxlan_bridge_1d_port_8472_ipv6.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/vxlan_bridge_1q.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/vxlan_bridge_1q_ipv6.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/vxlan_bridge_1q_mc_ul.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/vxlan_bridge_1q_port_8472.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/vxlan_bridge_1q_port_8472_ipv6.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/vxlan_reserved.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/vxlan_symmetric.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "net/forwarding/vxlan_symmetric_ipv6.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "drivers/net/dsa/bridge_locked_port.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-locked-port"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "drivers/net/dsa/bridge_mdb.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-mdb"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "drivers/net/dsa/bridge_mld.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-mdb"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "drivers/net/dsa/bridge_vlan_aware.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "vlan-admission",
+        "linux-bridge",
+        "linux-fdb"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "drivers/net/dsa/bridge_vlan_mcast.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-mdb"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "drivers/net/dsa/bridge_vlan_unaware.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "vlan-admission",
+        "linux-bridge",
+        "linux-fdb"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "drivers/net/dsa/local_termination.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "vlan"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "drivers/net/dsa/no_forwarding.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-no-forwarding"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "drivers/net/dsa/run_net_forwarding_test.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Upstream harness or library, not an independently adapted test."
+    },
+    {
+      "source": "drivers/net/dsa/tc_actions.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-tc"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "drivers/net/dsa/tc_taprio.sh",
+      "status": "not-ported",
+      "suites": [],
+      "notes": "Not adapted in this change; additional feature/topology/tooling or test-matrix work is required."
+    },
+    {
+      "source": "drivers/net/dsa/test_bridge_fdb_stress.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-fdb"
+      ],
+      "notes": "See test-catalog.md for exact assertions and omitted upstream variants."
+    },
+    {
+      "source": "net/bridge_stp_mode.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-bridge"
+      ],
+      "notes": "See test-catalog.md for exact scope; runs on real DSA members instead of virtual netns topology."
+    },
+    {
+      "source": "net/bridge_vlan_dump.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-bridge"
+      ],
+      "notes": "See test-catalog.md for exact scope; runs on real DSA members instead of virtual netns topology."
+    },
+    {
+      "source": "net/test_bridge_backup_port.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-bridge"
+      ],
+      "notes": "See test-catalog.md for exact scope; runs on real DSA members instead of virtual netns topology."
+    },
+    {
+      "source": "net/fdb_flush.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-bridge"
+      ],
+      "notes": "See test-catalog.md for exact scope; runs on real DSA members instead of virtual netns topology."
+    },
+    {
+      "source": "net/vlan_bridge_binding.sh",
+      "status": "adapted-subset",
+      "suites": [
+        "linux-bridge"
+      ],
+      "notes": "See test-catalog.md for exact scope; runs on real DSA members instead of virtual netns topology."
+    }
+  ]
+}
