@@ -3,7 +3,6 @@
 import datetime
 import pprint
 import re
-import paramiko
 
 DEBUG = False
 STATS_FILES = ['collisions', 'multicast', 'rx_compressed',
@@ -25,7 +24,8 @@ class SUT(object):
     """Class representing the System Under Test"""
 
     def __init__(self, hostname, key, mgmt):
-        self.mgmt = mgmt
+        import paramiko
+        self.mgmt = mgmt or "__no_management__"
         self.sshClient = paramiko.SSHClient()
         self.sshClient.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         self.sshClient.connect(hostname, username='root', key_filename=key)
