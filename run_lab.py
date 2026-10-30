@@ -34,6 +34,7 @@ SUITES = {
 
 # These classes own and clean up each scenario independently.
 SUITE_CLASSES = {
+    'stp': ('stp_suite.py', ('KernelStp',)),
     'b53-regressions': ('b53_regressions_suite.py', ('B53Regressions',)),
     'dsa-docs': ('dsa_docs_suite.py', ('DsaDocumentation',)),
     'home-office': ('home_office_suite.py', ('HomeOffice',)),
