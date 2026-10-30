@@ -102,6 +102,10 @@ def signed_frame(frame, signature):
     if len(frame) < offset:
         return False
     ethertype = int.from_bytes(frame[offset - 2:offset], 'big')
+    if ethertype <= 1500:
+        # Test markers live after the declared 802.3 payload, in padding.
+        # They must not change an LLC/BPDU body or make a short PDU valid.
+        return frame[offset + ethertype:].startswith(signature)
     if ethertype == 0x0800:
         if len(frame) < offset + 20 or frame[offset + 9] != 17:
             return False
@@ -136,6 +140,7 @@ class Stream:
     mac_step: int = 1
     tags: tuple = ()
     ethertype: int = 0
+    ethernet: str = ''
 
 
 class Traffic:
@@ -188,6 +193,17 @@ class Traffic:
                   source_mac=source_mac, version=version, tags=tags,
                   ethertype=ethertype)
 
+    def addEthernetStream(self, source, frame, count=3, rate=5):
+        """Send an exact 802.3/LLC body with a run marker outside its length."""
+        if len(frame) < 14:
+            raise ValueError('Ethernet header is missing')
+        length = int.from_bytes(frame[12:14], 'big')
+        if length > 1500 or len(frame) != 14 + length:
+            raise ValueError('Pass an unpadded 802.3 frame with its declared payload length')
+        self._add(source, int.from_bytes(frame[:6], 'big'), '192.0.2.200', count, rate,
+                  source_mac=int.from_bytes(frame[6:12], 'big'))
+        self.streams[-1].ethernet = frame.hex()
+
     def addUDPStream(self, source, destination, count, rate):
         self._add(source, self.getInterfaceMacAddress(destination), self._ip(destination), count, rate)
 
@@ -228,6 +244,8 @@ class Traffic:
                     if stream.ethertype:
                         frame = (mac_bytes(stream.destination_mac) + mac_bytes(mac) +
                                  struct.pack('!H', stream.ethertype) + signature.ljust(114, b'\0'))
+                    if stream.ethernet:
+                        frame = (bytes.fromhex(stream.ethernet) + signature).ljust(60, b'\0')
                     frame = tag_frame(frame, stream.tags)
                     argv = self.prefix + host_netns.command([self.mz, stream.source, '-q', '-c',
                             str(1 if changing else stream.count), '-d',
